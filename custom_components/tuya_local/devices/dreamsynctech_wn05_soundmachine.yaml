@@ -1,0 +1,130 @@
+name: Sound machine
+products:
+  - id: 7dirq5hqba22fw5y
+    manufacturer: DreamSync Tech
+    model: WN05
+entities:
+  - entity: switch
+    icon: "mdi:power"
+    dps:
+      - id: 122
+        type: boolean
+        name: switch
+  - entity: light
+    translation_key: nightlight
+    dps:
+      - id: 20
+        type: boolean
+        name: switch
+      - id: 24
+        type: hex
+        name: rgbhsv
+        format:
+          - name: h
+            bytes: 2
+            range:
+              min: 0
+              max: 360
+          - name: s
+            bytes: 2
+            range:
+              min: 0
+              max: 1000
+          - name: v
+            bytes: 2
+            range:
+              min: 0
+              max: 1000
+      - id: 119
+        type: string
+        name: effect
+        mapping:
+          - dps_val: normal
+            value: Steady
+          - dps_val: breath
+            value: Breathe
+          - dps_val: wakeup
+            value: Wake up
+      - id: 123
+        type: string
+        name: single_colour
+  - entity: number
+    name: Light level
+    icon: "mdi:brightness-6"
+    category: config
+    dps:
+      - id: 102
+        type: integer
+        name: value
+        range:
+          min: 0
+          max: 30
+  - entity: switch
+    translation_key: sound
+    dps:
+      - id: 66
+        type: boolean
+        name: switch
+      - id: 124
+        type: integer
+        name: preset
+  - entity: number
+    translation_key: volume
+    dps:
+      - id: 68
+        type: integer
+        name: value
+        range:
+          min: 1
+          max: 30
+  - entity: number
+    name: Track
+    icon: "mdi:music-box-multiple"
+    dps:
+      - id: 101
+        type: integer
+        name: value
+        range:
+          min: 1
+          max: 100
+  - entity: button
+    name: Next track
+    icon: "mdi:skip-next"
+    dps:
+      - id: 67
+        type: string
+        name: button
+        optional: true
+        mapping:
+          - dps_val: next
+            value: true
+  - entity: button
+    name: Previous track
+    icon: "mdi:skip-previous"
+    dps:
+      - id: 67
+        type: string
+        name: button
+        optional: true
+        mapping:
+          - dps_val: previous
+            value: true
+  - entity: switch
+    name: Speaker mode
+    icon: "mdi:speaker"
+    category: config
+    dps:
+      - id: 110
+        type: boolean
+        name: switch
+  - entity: number
+    name: Display brightness
+    icon: "mdi:clock-digital"
+    category: config
+    dps:
+      - id: 120
+        type: integer
+        name: value
+        range:
+          min: 0
+          max: 15
