@@ -1,8 +1,9 @@
 name: Sound machine
 products:
   - id: 7dirq5hqba22fw5y
-    manufacturer: DreamSync Tech
-    model: WN05
+    manufacturer: Momcozy
+    model: DreamSync Tech sound machine
+    model_id: WN05
 entities:
   - entity: switch
     icon: "mdi:power"
